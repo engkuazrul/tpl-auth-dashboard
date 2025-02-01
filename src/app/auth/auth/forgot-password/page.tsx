@@ -1,23 +1,21 @@
-import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import PageContainer from '@/app/components/container/PageContainer';
 import Logo from '@/app/(DashboardLayout)/layout/shared/logo/Logo';
-import AuthLogin from '../../authForms/AuthLogin';
+import PageContainer from '@/app/components/container/PageContainer';
+import AuthForgotPassword from '../../authForms/AuthForgotPassword';
 import Image from 'next/image';
 
-export default function Login () {
+export default function ForgotPassword() {
   return(
-  <PageContainer title="Login Page" description="this is Sample page">
-    <Grid container spacing={0} justifyContent="center" sx={{ height: '100vh' }}>
+  <PageContainer title="Forgot Password Page" description="this is Sample page">
+    <Grid container justifyContent="center" spacing={0} sx={{ overflowX: 'hidden' }}>
       <Grid
         item
         xs={12}
         sm={12}
-        lg={7}
-        xl={8}
+        lg={8}
+        xl={9}
         sx={{
           position: 'relative',
           '&:before': {
@@ -52,8 +50,7 @@ export default function Login () {
               alt="bg" width={500} height={500}
               style={{
                 width: '100%',
-                maxWidth: '500px',
-                maxHeight: '500px',
+                maxWidth: '500px', maxHeight: '500px',
               }}
             />
           </Box>
@@ -63,39 +60,22 @@ export default function Login () {
         item
         xs={12}
         sm={12}
-        lg={5}
-        xl={4}
+        lg={4}
+        xl={3}
         display="flex"
         justifyContent="center"
         alignItems="center"
       >
         <Box p={4}>
-          <AuthLogin
-            title="Welcome to Modernize"
-            subtext={
-              <Typography variant="subtitle1" color="textSecondary" mb={1}>
-                Your Admin Dashboard
-              </Typography>
-            }
-            subtitle={
-              <Stack direction="row" spacing={1} mt={3}>
-                <Typography color="textSecondary" variant="h6" fontWeight="500">
-                  New to Modernize?
-                </Typography>
-                <Typography
-                  component={Link}
-                  href="/auth/auth/register"
-                  fontWeight="500"
-                  sx={{
-                    textDecoration: 'none',
-                    color: 'primary.main',
-                  }}
-                >
-                  Create an account
-                </Typography>
-              </Stack>
-            }
-          />
+          <Typography variant="h4" fontWeight="700">
+            Forgot your password?
+          </Typography>
+
+          <Typography color="textSecondary" variant="subtitle2" fontWeight="400" mt={2}>
+            Please enter the email address associated with your account and We will email you a link
+            to reset your password.
+          </Typography>
+          <AuthForgotPassword />
         </Box>
       </Grid>
     </Grid>

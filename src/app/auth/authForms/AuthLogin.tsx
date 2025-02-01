@@ -106,7 +106,7 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => {
             </FormGroup>
             <Typography
               component={Link}
-              href="/"
+              href="/auth/auth/forgot-password"
               fontWeight="500"
               sx={{
                 textDecoration: "none",
